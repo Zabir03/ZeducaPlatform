@@ -20,9 +20,9 @@ It also integrates an **🤖 AI-powered doubt-solving agent**, so learners can i
 
 ## 🛠 Tech Stack
 
-- **Frontend:** HTML, CSS, JavaScript (React if extended)  
-- **Backend:** Node.js + Express (or similar stack)  
-- **Database:** MongoDB / MySQL  
+- **Frontend:** HTML, CSS, JavaScript   
+- **Backend:** PHP
+- **Database:** MySQL  
 - **AI Integration:** ChatGPT API / Custom AI agent  
 
 ---
