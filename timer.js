@@ -106,3 +106,13 @@
 
             sections.forEach(section => observer.observe(section));
     
+
+
+
+//     <!-- Timer Display -->
+//     <div id="timer-display"
+//         class="hidden fixed bottom-5 right-5 bg-gray-800 text-white px-4 py-2 rounded-lg shadow-2xl border border-indigo-500/50">
+
+//         <p class="text-sm">Time on <strong id="section-name" class="text-indigo-400"></strong>: <span id="time-spent"
+//         class="font-mono font-bold"></span></p>
+//     </div>

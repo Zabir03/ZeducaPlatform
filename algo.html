@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Algorithm Mystery - Educa</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .sidebar-link {
+            transition: background-color 0.2s ease, color 0.2s ease, padding-left 0.2s ease;
+        }
+
+        .sidebar-link.active {
+            background-color: #6366f1;
+            /* indigo-500 */
+            color: white;
+            font-weight: 600;
+            padding-left: 1.25rem;
+        }
+
+        .sidebar-category {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: #a5b4fc;
+            /* indigo-300 */
+        }
+
+        .sidebar-link.sub-item {
+            padding-left: 2rem;
+        }
+
+        .sidebar-link.sub-item.active {
+            padding-left: 2.25rem;
+        }
+
+        .content-section h3 {
+            border-left: 3px solid #6366f1;
+            padding-left: 0.75rem;
+        }
+
+        .content-section h4 {
+            font-weight: 700;
+            color: #c7d2fe;
+            /* indigo-200 */
+        }
+
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+
+        .aspect-video {
+            position: relative;
+            padding-top: 56.25%;
+            /* 16:9 Aspect Ratio */
+        }
+
+        .aspect-video>* {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+</head>
+
+<body class="bg-gray-900 text-gray-200">
+
+    <!-- Header Section -->
+    <header class="bg-gray-800 shadow-lg sticky top-0 z-50">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center relative">
+            <a href="index.html" class="text-3xl font-bold text-indigo-500">Zeduca</a>
+            <div class="hidden md:flex items-center space-x-8 absolute left-1/2 -translate-x-1/2">
+                <a href="index.html#home" class="text-gray-300 hover:text-white font-medium">Home</a>
+                <a href="index.html#about" class="text-gray-300 hover:text-white font-medium">About</a>
+                <a href="index.html#courses" class="text-gray-300 hover:text-white font-medium">Courses</a>
+                <a href="index.html#contact" class="text-gray-300 hover:text-white font-medium">Contact</a>
+            </div>
+            <button id="mobile-menu-button" class="md:hidden">
+                <i class="fas fa-bars text-2xl text-indigo-500"></i>
+            </button>
+        </nav>
+        <div id="mobile-menu" class="hidden md:hidden bg-gray-800 px-6 pt-2 pb-4">
+            <a href="index.html#home" class="block py-2 text-gray-300 hover:text-white">Home</a>
+            <a href="index.html#about" class="block py-2 text-gray-300 hover:text-white">About</a>
+            <a href="index.html#courses" class="block py-2 text-gray-300 hover:text-white">Courses</a>
+            <a href="index.html#contact" class="block py-2 text-gray-300 hover:text-white">Contact</a>
+        </div>
+    </header>
+
+    <!-- Main Body with Sidebar -->
+    <div class="container mx-auto px-6 py-12 flex flex-col md:flex-row gap-8">
+
+        <!-- Sidebar -->
+        <aside class="w-full md:w-1/4 lg:w-1/5">
+            <div class="bg-gray-800 rounded-lg p-4 sticky top-24">
+                <h2 class="text-xl font-bold text-white mb-4">Algorithm Topics</h2>
+                <nav id="sidebar-nav" class="flex flex-col space-y-2">
+                    <!-- Array -->
+                    <div class="sidebar-category px-3 pt-2">Array</div>
+                    <a href="#" class="sidebar-link sub-item active" data-target="kadanes">Kadane's Algorithm</a>
+                    <a href="#" class="sidebar-link sub-item" data-target="moores">Moore's Voting Algo</a>
+                    <a href="#" class="sidebar-link sub-item" data-target="sorting">Sorting</a>
+                    <a href="#" class="sidebar-link sub-item" data-target="searching">Searching</a>
+                    <a href="#" class="sidebar-link sub-item" data-target="two-pointer">Two Pointer</a>
+                    <a href="#" class="sidebar-link sub-item" data-target="greedy">Greedy Approach</a>
+
+                    <!-- String -->
+                    <div class="sidebar-category px-3 pt-4">String</div>
+                    <a href="#" class="sidebar-link sub-item" data-target="sliding-window">Sliding Window</a>
+
+                    <!-- LinkedList -->
+                    <div class="sidebar-category px-3 pt-4">LinkedList</div>
+                    <a href="#" class="sidebar-link sub-item" data-target="slow-fast">Slow & Fast Pointer</a>
+                    <a href="#" class="sidebar-link sub-item" data-target="reverse-ll">Reverse a LinkedList</a>
+
+                </nav>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main id="main-content" class="w-full md:w-3/4 lg:w-4/5">
+            <a href="dsa.html" class="text-indigo-400 hover:text-indigo-300 mb-6 inline-block"><i
+                    class="fas fa-arrow-left mr-2"></i> Back to DSA Hub</a>
+            <div id="content-container" class="bg-gray-800 rounded-lg shadow-lg p-6 md:p-12">
+
+                <!-- Kadane's Algorithm -->
+                <div id="kadanes" class="content-section space-y-6">
+                    <h2 class="text-3xl sm:text-4xl font-extrabold text-white">Kadane's Algorithm</h2>
+                    <p class="text-gray-400 text-lg">The ultimate solution for finding the largest sum of a contiguous
+                        subarray in an array of numbers.</p>
+                    <h3 class="text-2xl font-bold text-indigo-400 pt-2">The Core Idea</h3>
+                    <p class="text-gray-400">Iterate through the array, keeping track of two values: the maximum sum
+                        ending at the current position (`current_max`) and the maximum sum found so far (`global_max`).
+                        For each element, you decide whether to extend the current subarray or start a new one.</p>
+                    <pre class="bg-gray-900 text-white p-4 rounded-md overflow-x-auto"><code class="language-pseudocode">function kadanes(arr):
+  current_max = 0
+  global_max = -Infinity
+
+  for each number in arr:
+    current_max = max(number, current_max + number)
+    if current_max > global_max:
+      global_max = current_max
+      
+  return global_max</code></pre>
+
+                    <h3 class="text-2xl font-bold text-indigo-400 pt-4 mt-6">Video Explanation</h3>
+                    <div class="aspect-video bg-black rounded-lg overflow-hidden relative group cursor-pointer">
+                        <img src="https://placehold.co/1280x720/111827/a5b4fc?text=Watch+Tutorial"
+                            alt="Video Placeholder"
+                            class="w-full h-full object-cover opacity-70 group-hover:opacity-50 transition-opacity">
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <i
+                                class="fas fa-play-circle text-6xl text-white opacity-80 group-hover:opacity-100 group-hover:scale-110 transition-transform"></i>
+                        </div>
+                    </div>
+
+                    <ul class="list-disc list-inside text-gray-400 space-y-2 pt-6">
+                        <li><b>Time Complexity:</b> O(n) - Single pass through the array.</li>
+                        <li><b>Space Complexity:</b> O(1) - Only a few variables are used.</li>
+                    </ul>
+                </div>
+
+                <!-- Moore's Voting Algorithm -->
+                <div id="moores" class="content-section hidden space-y-6">
+                    <h2 class="text-3xl sm:text-4xl font-extrabold text-white">Moore's Voting Algorithm</h2>
+                    <p class="text-gray-400 text-lg">A highly efficient algorithm to find the majority element in an
+                        array, i.e., the element that appears more than n/2 times.</p>
+                    <h3 class="text-2xl font-bold text-indigo-400 pt-2">The Core Idea</h3>
+                    <p class="text-gray-400">The algorithm works on the principle of cancellation. It maintains a
+                        `candidate` element and a `count`. It iterates through the array; if the current element matches
+                        the candidate, the count is incremented. If it doesn't, the count is decremented. If the count
+                        reaches zero, a new candidate is chosen. The element that remains as the candidate at the end is
+                        the potential majority element (which must then be verified in a second pass).</p>
+                    <pre class="bg-gray-900 text-white p-4 rounded-md overflow-x-auto"><code class="language-pseudocode">function mooresVoting(arr):
+  candidate = null
+  count = 0
+
+  for each number in arr:
+    if count == 0:
+      candidate = number
+    count += (1 if number == candidate else -1)
+
+  count = 0
+  for each number in arr:
+    if number == candidate:
+      count++
+  
+  return candidate if count > length(arr)/2 else null</code></pre>
+
+                    <h3 class="text-2xl font-bold text-indigo-400 pt-4 mt-6">Video Explanation</h3>
+                    <div class="aspect-video bg-black rounded-lg overflow-hidden relative group cursor-pointer">
+                        <img src="https://placehold.co/1280x720/111827/a5b4fc?text=Watch+Tutorial"
+                            alt="Video Placeholder"
+                            class="w-full h-full object-cover opacity-70 group-hover:opacity-50 transition-opacity">
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <i
+                                class="fas fa-play-circle text-6xl text-white opacity-80 group-hover:opacity-100 group-hover:scale-110 transition-transform"></i>
+                        </div>
+                    </div>
+
+                    <ul class="list-disc list-inside text-gray-400 space-y-2 pt-6">
+                        <li><b>Time Complexity:</b> O(n) - Two passes at most.</li>
+                        <li><b>Space Complexity:</b> O(1) - Constant extra space.</li>
+                    </ul>
+                </div>
+
+                <!-- Sorting -->
+                <div id="sorting" class="content-section hidden space-y-6">
+                    <h2 class="text-3xl sm:text-4xl font-extrabold text-white">Sorting Algorithms</h2>
+                    <p class="text-gray-400 text-lg">Sorting is the process of arranging items in a specific order.
+                        Different algorithms offer trade-offs between speed, simplicity, and memory usage.</p>
+                    <h3 class="text-2xl font-bold text-indigo-400 pt-2">Common Algorithms</h3>
+                    <div class="space-y-6">
+                        <div>
+                            <h4 class="text-xl">Bubble Sort</h4>
+                            <p class="text-gray-400">Repeatedly steps through the list, compares adjacent elements and
+                                swaps them if they are in the wrong order. The pass through the list is repeated until
+                                the list is sorted. Simple but inefficient (O(n²)).</p>
+                            <pre class="bg-gray-900 text-white p-4 mt-2 rounded-md overflow-x-auto"><code class="language-pseudocode">function bubbleSort(arr):
+  n = length(arr)
+  for i from 0 to n-1:
+    swapped = false
+    for j from 0 to n-i-2:
+      if arr[j] > arr[j+1]:
+        swap(arr[j], arr[j+1])
+        swapped = true
+    if not swapped:
+      break</code></pre>
+                        </div>
+                        <div>
+                            <h4 class="text-xl">Merge Sort</h4>
+                            <p class="text-gray-400">A divide-and-conquer algorithm. It divides the array into halves,
+                                recursively sorts them, and then merges them back together. Efficient and stable (O(n
+                                log n)).</p>
+                            <pre class="bg-gray-900 text-white p-4 mt-2 rounded-md overflow-x-auto"><code class="language-pseudocode">function mergeSort(arr):
+  if length(arr) <= 1:
+    return arr
+  
+  mid = length(arr) / 2
+  left_half = mergeSort(arr[0 to mid])
+  right_half = mergeSort(arr[mid to end])
+  
+  return merge(left_half, right_half)
+
+function merge(left, right):
+  result = []
+  while left is not empty and right is not empty:
+    if left[0] < right[0]:
+      append left[0] to result
+      remove first element from left
+    else:
+      append right[0] to result
+      remove first element from right
+  
+  append remaining elements from left or right to result
+  return result</code></pre>
+                        </div>
+                        <div>
+                            <h4 class="text-xl">Quick Sort</h4>
+                            <p class="text-gray-400">Another divide-and-conquer algorithm. It picks a 'pivot' element
+                                and partitions the other elements into two sub-arrays, according to whether they are
+                                less than or greater than the pivot. Highly efficient on average (O(n log n)).</p>
+                            <pre class="bg-gray-900 text-white p-4 mt-2 rounded-md overflow-x-auto"><code class="language-pseudocode">function quickSort(arr, low, high):
+  if low < high:
+    pi = partition(arr, low, high)
+    quickSort(arr, low, pi - 1)
+    quickSort(arr, pi + 1, high)
+
+function partition(arr, low, high):
+  pivot = arr[high]
+  i = low - 1
+  for j from low to high - 1:
+    if arr[j] < pivot:
+      i++
+      swap(arr[i], arr[j])
+  swap(arr[i+1], arr[high])
+  return i + 1</code></pre>
+                        </div>
+                    </div>
+                    <h3 class="text-2xl font-bold text-indigo-400 pt-4 mt-6">Video Explanation</h3>
+                    <div class="aspect-video bg-black rounded-lg overflow-hidden relative group cursor-pointer">
+                        <img src="https://placehold.co/1280x720/111827/a5b4fc?text=Watch+Tutorial"
+                            alt="Video Placeholder"
+                            class="w-full h-full object-cover opacity-70 group-hover:opacity-50 transition-opacity">
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <i
+                                class="fas fa-play-circle text-6xl text-white opacity-80 group-hover:opacity-100 group-hover:scale-110 transition-transform"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Searching -->
+                <div id="searching" class="content-section hidden space-y-6">
+                    <h2 class="text-3xl sm:text-4xl font-extrabold text-white">Searching Algorithms</h2>
+                    <p class="text-gray-400 text-lg">Searching algorithms are designed to find an element within a data
+                        structure.</p>
+                    <div class="space-y-6">
+                        <div>
+                            <h4 class="text-xl">Linear Search</h4>
+                            <p class="text-gray-400">Sequentially checks each element of the list until a match is found
+                                or the whole list has been searched. It can be used on unsorted lists. Simple but slow
+                                (O(n)).</p>
+                            <pre class="bg-gray-900 text-white p-4 mt-2 rounded-md overflow-x-auto"><code class="language-pseudocode">function linearSearch(arr, target):
+  for i from 0 to length(arr)-1:
+    if arr[i] == target:
+      return i
+  return -1</code></pre>
+                        </div>
+                        <div>
+                            <h4 class="text-xl">Binary Search</h4>
+                            <p class="text-gray-400">Efficiently finds an item from a <strong>sorted</strong> list by
+                                repeatedly dividing the search interval in half. Very fast (O(log n)).</p>
+                            <pre class="bg-gray-900 text-white p-4 mt-2 rounded-md overflow-x-auto"><code class="language-pseudocode">function binarySearch(arr, target):
+  low = 0
+  high = length(arr) - 1
+
+  while low <= high:
+    mid = floor((low + high) / 2)
+    if arr[mid] == target:
+      return mid
+    else if arr[mid] < target:
+      low = mid + 1
+    else:
+      high = mid - 1
+      
+  return -1</code></pre>
+                        </div>
+                    </div>
+                    <h3 class="text-2xl font-bold text-indigo-400 pt-4 mt-6">Video Explanation</h3>
+                    <div class="aspect-video bg-black rounded-lg overflow-hidden relative group cursor-pointer">
+                        <img src="https://placehold.co/1280x720/111827/a5b4fc?text=Watch+Tutorial"
+                            alt="Video Placeholder"
+                            class="w-full h-full object-cover opacity-70 group-hover:opacity-50 transition-opacity">
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <i
+                                class="fas fa-play-circle text-6xl text-white opacity-80 group-hover:opacity-100 group-hover:scale-110 transition-transform"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Two Pointer -->
+                <div id="two-pointer" class="content-section hidden space-y-6">
+                    <h2 class="text-3xl sm:text-4xl font-extrabold text-white">Two-Pointer Technique</h2>
+                    <p class="text-gray-400 text-lg">An elegant and efficient technique that uses two pointers to
+                        iterate over a data structure, typically a sorted array, until they meet.</p>
+                    <h3 class="text-2xl font-bold text-indigo-400 pt-2">Example: Find a Pair with a Given Sum in a
+                        Sorted Array</h3>
+                    <p class="text-gray-400">Place one pointer (`left`) at the beginning and another (`right`) at the
+                        end. If their sum is the target, you're done. If the sum is too small, move the `left` pointer
+                        forward to increase the sum. If it's too large, move the `right` pointer backward to decrease
+                        the sum.</p>
+                    <pre class="bg-gray-900 text-white p-4 rounded-md overflow-x-auto"><code class="language-pseudocode">function findPair(arr, targetSum):
+  left = 0
+  right = length(arr) - 1
+  
+  while left < right:
+    currentSum = arr[left] + arr[right]
+    if currentSum == targetSum:
+      return (arr[left], arr[right])
+    else if currentSum < targetSum:
+      left++
+    else:
+      right--
+      
+  return null</code></pre>
+                    <h3 class="text-2xl font-bold text-indigo-400 pt-4 mt-6">Video Explanation</h3>
+                    <div class="aspect-video bg-black rounded-lg overflow-hidden relative group cursor-pointer">
+                        <img src="https://placehold.co/1280x720/111827/a5b4fc?text=Watch+Tutorial"
+                            alt="Video Placeholder"
+                            class="w-full h-full object-cover opacity-70 group-hover:opacity-50 transition-opacity">
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <i
+                                class="fas fa-play-circle text-6xl text-white opacity-80 group-hover:opacity-100 group-hover:scale-110 transition-transform"></i>
+                        </div>
+                    </div>
+                    <ul class="list-disc list-inside text-gray-400 space-y-2 pt-6">
+                        <li><b>Time Complexity:</b> O(n) - Because the pointers only move in one direction.</li>
+                        <li><b>Space Complexity:</b> O(1)</li>
+                    </ul>
+                </div>
+
+                <!-- Greedy Approach -->
+                <div id="greedy" class="content-section hidden space-y-6">
+                    <h2 class="text-3xl sm:text-4xl font-extrabold text-white">Greedy Approach</h2>
+                    <p class="text-gray-400 text-lg">A problem-solving heuristic of making the locally optimal choice at
+                        each stage with the hope of finding a global optimum. It doesn't always work, but is very
+                        powerful for certain problems.</p>
+                    <h3 class="text-2xl font-bold text-indigo-400 pt-2">Example: Activity Selection Problem</h3>
+                    <p class="text-gray-400">Given a set of activities with start and end times, select the maximum
+                        number of non-overlapping activities. The greedy choice is to always pick the next activity
+                        whose finish time is earliest among the remaining activities that don't overlap with the
+                        previously selected one.</p>
+                    <pre class="bg-gray-900 text-white p-4 rounded-md overflow-x-auto"><code class="language-pseudocode">function activitySelection(activities):
+  sort(activities, by finish_time)
+  
+  selected_count = 1
+  last_finish_time = activities[0].finish_time
+  
+  for i from 1 to length(activities)-1:
+    if activities[i].start_time >= last_finish_time:
+      selected_count++
+      last_finish_time = activities[i].finish_time
+      
+  return selected_count</code></pre>
+                    <h3 class="text-2xl font-bold text-indigo-400 pt-4 mt-6">Video Explanation</h3>
+                    <div class="aspect-video bg-black rounded-lg overflow-hidden relative group cursor-pointer">
+                        <img src="https://placehold.co/1280x720/111827/a5b4fc?text=Watch+Tutorial"
+                            alt="Video Placeholder"
+                            class="w-full h-full object-cover opacity-70 group-hover:opacity-50 transition-opacity">
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <i
+                                class="fas fa-play-circle text-6xl text-white opacity-80 group-hover:opacity-100 group-hover:scale-110 transition-transform"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sliding Window -->
+                <div id="sliding-window" class="content-section hidden space-y-6">
+                    <h2 class="text-3xl sm:text-4xl font-extrabold text-white">Sliding Window Technique</h2>
+                    <p class="text-gray-400 text-lg">This technique is used to efficiently solve problems that involve a
+                        contiguous subarray or substring. A "window" of a certain size slides over the data, and we only
+                        operate on the data within that window.</p>
+                    <h3 class="text-2xl font-bold text-indigo-400 pt-2">Example: Max Sum Subarray of Size K</h3>
+                    <p class="text-gray-400">Instead of recalculating the sum for every subarray, you can calculate the
+                        sum of the first window. Then, for each step, you slide the window by one element: subtract the
+                        element that leaves the window and add the new element that enters. This reduces the complexity
+                        from O(n*k) to O(n).</p>
+                    <pre class="bg-gray-900 text-white p-4 rounded-md overflow-x-auto"><code class="language-pseudocode">function maxSumSubarray(arr, k):
+  if length(arr) < k:
+    return -1
+    
+  window_sum = sum of first k elements
+  max_sum = window_sum
+  
+  for i from k to length(arr)-1:
+    window_sum = window_sum - arr[i-k] + arr[i]
+    max_sum = max(max_sum, window_sum)
+    
+  return max_sum</code></pre>
+                    <h3 class="text-2xl font-bold text-indigo-400 pt-4 mt-6">Video Explanation</h3>
+                    <div class="aspect-video bg-black rounded-lg overflow-hidden relative group cursor-pointer">
+                        <img src="https://placehold.co/1280x720/111827/a5b4fc?text=Watch+Tutorial"
+                            alt="Video Placeholder"
+                            class="w-full h-full object-cover opacity-70 group-hover:opacity-50 transition-opacity">
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <i
+                                class="fas fa-play-circle text-6xl text-white opacity-80 group-hover:opacity-100 group-hover:scale-110 transition-transform"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Slow & Fast Pointer -->
+                <div id="slow-fast" class="content-section hidden space-y-6">
+                    <h2 class="text-3xl sm:text-4xl font-extrabold text-white">Slow & Fast Pointer</h2>
+                    <p class="text-gray-400 text-lg">A powerful technique for LinkedLists, also known as Floyd's
+                        Tortoise and Hare algorithm. It uses two pointers that move at different speeds.</p>
+                    <h4 class="text-xl mt-4">Use Case 1: Cycle Detection</h4>
+                    <p class="text-gray-400">Move one pointer by one step (`slow`) and the other by two steps (`fast`).
+                        If the pointers ever meet, there is a cycle in the list.</p>
+                    <pre class="bg-gray-900 text-white p-4 mt-2 rounded-md overflow-x-auto"><code class="language-pseudocode">function hasCycle(head):
+  slow = head
+  fast = head
+  
+  while fast is not null and fast.next is not null:
+    slow = slow.next
+    fast = fast.next.next
+    if slow == fast:
+      return true
+      
+  return false</code></pre>
+                    <h4 class="text-xl mt-4">Use Case 2: Finding Middle Element</h4>
+                    <p class="text-gray-400">When the `fast` pointer reaches the end of the list, the `slow` pointer
+                        will be at the middle.</p>
+                    <pre class="bg-gray-900 text-white p-4 mt-2 rounded-md overflow-x-auto"><code class="language-pseudocode">function findMiddle(head):
+  slow = head
+  fast = head
+  
+  while fast is not null and fast.next is not null:
+    slow = slow.next
+    fast = fast.next.next
+    
+  return slow</code></pre>
+                    <h3 class="text-2xl font-bold text-indigo-400 pt-4 mt-6">Video Explanation</h3>
+                    <div class="aspect-video bg-black rounded-lg overflow-hidden relative group cursor-pointer">
+                        <img src="https://placehold.co/1280x720/111827/a5b4fc?text=Watch+Tutorial"
+                            alt="Video Placeholder"
+                            class="w-full h-full object-cover opacity-70 group-hover:opacity-50 transition-opacity">
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <i
+                                class="fas fa-play-circle text-6xl text-white opacity-80 group-hover:opacity-100 group-hover:scale-110 transition-transform"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Reverse LinkedList -->
+                <div id="reverse-ll" class="content-section hidden space-y-6">
+                    <h2 class="text-3xl sm:text-4xl font-extrabold text-white">Reverse a LinkedList</h2>
+                    <p class="text-gray-400 text-lg">A common interview problem that involves reversing the direction of
+                        pointers in a singly linked list.</p>
+                    <h3 class="text-2xl font-bold text-indigo-400 pt-2">The Core Idea</h3>
+                    <p class="text-gray-400">You need three pointers: `prev` (to store the previous node), `current`
+                        (the node you're currently visiting), and `next_node` (to store the next node before you change
+                        the pointer). Iterate through the list, and for each node, store the `next_node`, reverse the
+                        `current` node's pointer to `prev`, and then move `prev` and `current` one step forward.</p>
+                    <pre class="bg-gray-900 text-white p-4 mt-2 rounded-md overflow-x-auto"><code class="language-pseudocode">function reverseList(head):
+  prev = null
+  current = head
+  
+  while current is not null:
+    next_node = current.next
+    current.next = prev
+    prev = current
+    current = next_node
+    
+  return prev</code></pre>
+                    <h3 class="text-2xl font-bold text-indigo-400 pt-4 mt-6">Video Explanation</h3>
+                    <div class="aspect-video bg-black rounded-lg overflow-hidden relative group cursor-pointer">
+                        <img src="https://placehold.co/1280x720/111827/a5b4fc?text=Watch+Tutorial"
+                            alt="Video Placeholder"
+                            class="w-full h-full object-cover opacity-70 group-hover:opacity-50 transition-opacity">
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <i
+                                class="fas fa-play-circle text-6xl text-white opacity-80 group-hover:opacity-100 group-hover:scale-110 transition-transform"></i>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </main>
+    </div>
+
+    <!-- Timer Display -->
+    <div id="timer-display"
+        class="hidden fixed bottom-5 right-5 bg-gray-800 text-white px-4 py-2 rounded-lg shadow-2xl border border-indigo-500/50">
+
+        <p class="text-sm">Time on <strong id="section-name" class="text-indigo-400"></strong>: <span id="time-spent"
+                class="font-mono font-bold"></span></p>
+    </div>
+
+
+
+
+
+    <!-- Footer Section -->
+    <footer class="bg-gray-800 border-t border-gray-700 py-12">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-2xl font-bold mb-4 text-indigo-500">Zeduca</h3>
+                    <p class="text-gray-400">Your journey to knowledge starts here.</p>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4 text-white">Quick Links</h4>
+                    <ul>
+                        <li class="mb-2"><a href="index.html#about" class="text-gray-400 hover:text-white">About Us</a>
+                        </li>
+                        <li class="mb-2"><a href="index.html#courses" class="text-gray-400 hover:text-white">Courses</a>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4 text-white">Contact Us</h4>
+                    <ul>
+                        <li class="mb-2 flex items-center"><i class="fas fa-map-marker-alt mr-2 text-indigo-500"></i>
+                            Learning City</li>
+                        <li class="mb-2 flex items-center"><i class="fas fa-envelope mr-2 text-indigo-500"></i>
+                            contact@zeduca.com</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4 text-white">Follow Us</h4>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-facebook-f text-xl"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-twitter text-xl"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-8 pt-6 text-center text-gray-500">
+                <p>&copy; 2024 Zeduca. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+    <script src="timer.js"></script>
+    <script src="algo.js"> </script>
+
+
+</body>
+
+</html>

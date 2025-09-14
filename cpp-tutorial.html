@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>C++ & OOP - Zeduca</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css" />
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+        .sidebar-link {
+            transition: background-color 0.2s ease, color 0.2s ease, padding-left 0.2s ease;
+        }
+        .sidebar-link.active {
+            background-color: #6366f1; /* indigo-500 */
+            color: white;
+            font-weight: 600;
+        }
+        .content-section h3 {
+            border-left: 3px solid #6366f1;
+            padding-left: 0.75rem;
+        }
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+        .aspect-video {
+            position: relative;
+            padding-top: 56.25%; /* 16:9 Aspect Ratio */
+        }
+        .aspect-video > * {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+</head>
+<body class="bg-gray-900 text-gray-100 dark">
+
+    <!-- Header Section -->
+    <header class="bg-gray-800/80 dark:bg-gray-900/80 backdrop-blur-sm shadow-lg sticky top-0 z-50">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="index.html" class="text-3xl font-bold text-indigo-500">Zeduca</a>
+            <div class="hidden md:flex items-center space-x-8">
+                <a href="index.html#home" class="nav-link">Home</a>
+                <a href="index.html#about" class="nav-link">About</a>
+                <a href="index.html#courses" class="nav-link active">Courses</a>
+                <a href="index.html#contact" class="nav-link">Contact</a>
+            </div>
+            <div class="flex items-center space-x-4">
+                <button id="theme-toggle" class="text-gray-300 hover:text-white">
+                    
+                    <i class="fas fa-moon text-xl hidden" id="theme-toggle-moon"></i>
+                </button>
+                <button id="mobile-menu-button" class="md:hidden">
+                    <i class="fas fa-bars text-2xl text-indigo-500"></i>
+                </button>
+            </div>
+        </nav>
+        <div id="mobile-menu" class="hidden md:hidden bg-gray-800 dark:bg-gray-900 px-6 pt-2 pb-4">
+            <a href="index.html#home" class="block py-2">Home</a>
+            <a href="index.html#about" class="block py-2">About</a>
+            <a href="index.html#courses" class="block py-2">Courses</a>
+            <a href="index.html#contact" class="block py-2">Contact</a>
+        </div>
+    </header>
+
+    <!-- Main Body with Sidebar -->
+    <div class="container mx-auto px-6 py-12 flex flex-col md:flex-row gap-8">
+        
+        <!-- Sidebar -->
+        <aside class="w-full md:w-1/4 lg:w-1/5">
+            <div class="bg-gray-800 dark:bg-gray-700 rounded-lg p-4 sticky top-24">
+                <h2 class="text-xl font-bold text-white mb-4">C++ & OOP Topics</h2>
+                <nav id="sidebar-nav" class="flex flex-row md:flex-col overflow-x-auto no-scrollbar pb-4 md:pb-0">
+                    <a href="#" class="sidebar-link active flex-shrink-0 md:flex-shrink w-full text-left p-3 rounded-md" data-target="intro-oop">Introduction to OOP</a>
+                    <a href="#" class="sidebar-link flex-shrink-0 md:flex-shrink w-full text-left p-3 rounded-md" data-target="classes-oop">Classes & Objects</a>
+                    <a href="#" class="sidebar-link flex-shrink-0 md:flex-shrink w-full text-left p-3 rounded-md" data-target="encapsulation-oop">Encapsulation</a>
+                    <a href="#" class="sidebar-link flex-shrink-0 md:flex-shrink w-full text-left p-3 rounded-md" data-target="inheritance-oop">Inheritance</a>
+                    <a href="#" class="sidebar-link flex-shrink-0 md:flex-shrink w-full text-left p-3 rounded-md" data-target="polymorphism-oop">Polymorphism</a>
+                    <a href="#" class="sidebar-link flex-shrink-0 md:flex-shrink w-full text-left p-3 rounded-md" data-target="abstraction-oop">Abstraction</a>
+                </nav>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main id="main-content" class="w-full md:w-3/4 lg:w-4/5">
+            <a href="1st.html" class="text-indigo-400 hover:text-indigo-300 mb-6 inline-block"><i class="fas fa-arrow-left mr-2"></i> Back to 1st Year</a>
+            <div class="bg-gray-800 dark:bg-gray-700 rounded-lg shadow-lg p-6 md:p-12">
+                
+                <div id="intro-oop" class="content-section space-y-6">
+                    <h2 class="text-3xl sm:text-4xl font-extrabold text-white">Introduction to Object-Oriented Programming</h2>
+                    <p class="text-gray-400 text-lg">Object-Oriented Programming (OOP) is a programming paradigm based on the concept of "objects", which can contain data in the form of fields (often known as attributes or properties), and code, in the form of procedures (often known as methods).</p>
+                    <h3 class="text-2xl font-bold text-indigo-400 pt-2">Core Principles</h3>
+                     <ul class="list-disc list-inside text-gray-400 space-y-2">
+                        <li><strong>Modularity:</strong> Encapsulation enables objects to be self-contained, making troubleshooting and collaborative development easier.</li>
+                        <li><strong>Reusability:</strong> Inheritance allows code to be reused, saving time and effort.</li>
+                        <li><strong>Flexibility:</strong> Polymorphism allows a single function to adapt to the class it is placed in.</li>
+                    </ul>
+                     <h3 class="text-2xl font-bold text-indigo-400 pt-4 mt-6">Video Explanation</h3>
+                    <div class="aspect-video bg-black rounded-lg overflow-hidden relative group cursor-pointer">
+                        <img src="https://placehold.co/1280x720/111827/a5b4fc?text=Watch+Tutorial" alt="Video Placeholder" class="w-full h-full object-cover opacity-70 group-hover:opacity-50 transition-opacity">
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <i class="fas fa-play-circle text-6xl text-white opacity-80 group-hover:opacity-100 group-hover:scale-110 transition-transform"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="classes-oop" class="content-section hidden space-y-6">
+                    <h2 class="text-3xl sm:text-4xl font-extrabold text-white">Classes & Objects</h2>
+                    <p class="text-gray-400">A **class** is a blueprint for creating objects. An **object** is an instance of a class. The class defines the attributes (data) and methods (behavior) that all objects of that type will have.</p>
+                     <h3 class="text-2xl font-bold text-indigo-400 pt-4 mt-6">Video Explanation</h3>
+                    <div class="aspect-video bg-black rounded-lg overflow-hidden relative group cursor-pointer">
+                        <img src="https://placehold.co/1280x720/111827/a5b4fc?text=Watch+Tutorial" alt="Video Placeholder" class="w-full h-full object-cover opacity-70 group-hover:opacity-50 transition-opacity">
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <i class="fas fa-play-circle text-6xl text-white opacity-80 group-hover:opacity-100 group-hover:scale-110 transition-transform"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="encapsulation-oop" class="content-section hidden space-y-6">
+                    <h2 class="text-3xl sm:text-4xl font-extrabold text-white">Encapsulation</h2>
+                    <p class="text-gray-400">Encapsulation is the bundling of data with the methods that operate on that data. It is used to hide the values or state of a structured data object inside a class, preventing unauthorized direct access to them.</p>
+                     <h3 class="text-2xl font-bold text-indigo-400 pt-4 mt-6">Video Explanation</h3>
+                    <div class="aspect-video bg-black rounded-lg overflow-hidden relative group cursor-pointer">
+                        <img src="https://placehold.co/1280x720/111827/a5b4fc?text=Watch+Tutorial" alt="Video Placeholder" class="w-full h-full object-cover opacity-70 group-hover:opacity-50 transition-opacity">
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <i class="fas fa-play-circle text-6xl text-white opacity-80 group-hover:opacity-100 group-hover:scale-110 transition-transform"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="inheritance-oop" class="content-section hidden space-y-6">
+                    <h2 class="text-3xl sm:text-4xl font-extrabold text-white">Inheritance</h2>
+                    <p class="text-gray-400">Inheritance is a mechanism in which one class acquires the property of another class. It helps to reuse, specify, and extend existing code.</p>
+                     <h3 class="text-2xl font-bold text-indigo-400 pt-4 mt-6">Video Explanation</h3>
+                    <div class="aspect-video bg-black rounded-lg overflow-hidden relative group cursor-pointer">
+                        <img src="https://placehold.co/1280x720/111827/a5b4fc?text=Watch+Tutorial" alt="Video Placeholder" class="w-full h-full object-cover opacity-70 group-hover:opacity-50 transition-opacity">
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <i class="fas fa-play-circle text-6xl text-white opacity-80 group-hover:opacity-100 group-hover:scale-110 transition-transform"></i>
+                        </div>
+                    </div>
+                </div>
+                
+                <div id="polymorphism-oop" class="content-section hidden space-y-6">
+                    <h2 class="text-3xl sm:text-4xl font-extrabold text-white">Polymorphism</h2>
+                    <p class="text-gray-400">Polymorphism allows methods to do different things based on the object it is acting upon, even though they share the same name. This is achieved through method overloading (compile-time) and method overriding (run-time).</p>
+                     <h3 class="text-2xl font-bold text-indigo-400 pt-4 mt-6">Video Explanation</h3>
+                    <div class="aspect-video bg-black rounded-lg overflow-hidden relative group cursor-pointer">
+                        <img src="https://placehold.co/1280x720/111827/a5b4fc?text=Watch+Tutorial" alt="Video Placeholder" class="w-full h-full object-cover opacity-70 group-hover:opacity-50 transition-opacity">
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <i class="fas fa-play-circle text-6xl text-white opacity-80 group-hover:opacity-100 group-hover:scale-110 transition-transform"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="abstraction-oop" class="content-section hidden space-y-6">
+                    <h2 class="text-3xl sm:text-4xl font-extrabold text-white">Abstraction</h2>
+                    <p class="text-gray-400">Abstraction means displaying only essential information and hiding the details. Data abstraction refers to providing only essential information about the data to the outside world, hiding the background details or implementation.</p>
+                     <h3 class="text-2xl font-bold text-indigo-400 pt-4 mt-6">Video Explanation</h3>
+                    <div class="aspect-video bg-black rounded-lg overflow-hidden relative group cursor-pointer">
+                        <img src="https://placehold.co/1280x720/111827/a5b4fc?text=Watch+Tutorial" alt="Video Placeholder" class="w-full h-full object-cover opacity-70 group-hover:opacity-50 transition-opacity">
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <i class="fas fa-play-circle text-6xl text-white opacity-80 group-hover:opacity-100 group-hover:scale-110 transition-transform"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Footer Section -->
+    <footer class="bg-gray-800 border-t border-gray-700 py-12 mt-20">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-2xl font-bold mb-4 text-indigo-500">Zeduca</h3>
+                    <p class="text-gray-400">Your journey to knowledge starts here.</p>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4 text-white">Quick Links</h4>
+                    <ul>
+                        <li class="mb-2"><a href="index.html#about" class="text-gray-400 hover:text-white">About Us</a></li>
+                        <li class="mb-2"><a href="index.html#courses" class="text-gray-400 hover:text-white">Courses</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4 text-white">Contact Us</h4>
+                    <ul>
+                        <li class="mb-2 flex items-center"><i class="fas fa-map-marker-alt mr-2 text-indigo-500"></i> Learning City</li>
+                        <li class="mb-2 flex items-center"><i class="fas fa-envelope mr-2 text-indigo-500"></i> contact@zeduca.com</li>
+                    </ul>
+                </div>
+                <div>
+                     <h4 class="text-lg font-semibold mb-4 text-white">Follow Us</h4>
+                     <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-facebook-f text-xl"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-twitter text-xl"></i></a>
+                     </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-8 pt-6 text-center text-gray-500">
+                <p>&copy; 2024 Zeduca. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        // Sidebar navigation logic for this specific page
+        document.addEventListener('DOMContentLoaded', () => {
+            const sidebarNav = document.getElementById('sidebar-nav');
+            const contentSections = document.querySelectorAll('.content-section');
+            const sidebarLinks = document.querySelectorAll('.sidebar-link');
+            const mainContent = document.getElementById('main-content');
+
+            sidebarNav.addEventListener('click', (e) => {
+                e.preventDefault();
+                const clickedLink = e.target.closest('.sidebar-link');
+
+                if (clickedLink) {
+                    const targetId = clickedLink.dataset.target;
+                    
+                    contentSections.forEach(section => section.classList.add('hidden'));
+                    const targetSection = document.getElementById(targetId);
+                    if (targetSection) {
+                        targetSection.classList.remove('hidden');
+                        if (window.innerWidth < 768) {
+                            mainContent.scrollIntoView({ behavior: 'smooth' });
+                        }
+                    }
+
+                    sidebarLinks.forEach(link => link.classList.remove('active'));
+                    clickedLink.classList.add('active');
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>

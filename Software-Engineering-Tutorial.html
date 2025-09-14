@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Software Engineering - Zeduca</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css" />
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+        .sidebar-link {
+            transition: background-color 0.2s ease, color 0.2s ease, padding-left 0.2s ease;
+        }
+        .sidebar-link.active {
+            background-color: #6366f1; /* indigo-500 */
+            color: white;
+            font-weight: 600;
+        }
+        .content-section h3 {
+            border-left: 3px solid #6366f1;
+            padding-left: 0.75rem;
+        }
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+        .aspect-video {
+            position: relative;
+            padding-top: 56.25%; /* 16:9 Aspect Ratio */
+        }
+        .aspect-video > * {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+</head>
+<body class="bg-gray-900 text-gray-100 dark">
+
+    <!-- Header Section -->
+    <header class="bg-gray-800/80 dark:bg-gray-900/80 backdrop-blur-sm shadow-lg sticky top-0 z-50">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="index.html" class="text-3xl font-bold text-indigo-500">Zeduca</a>
+            <div class="hidden md:flex items-center space-x-8">
+                <a href="index.html#home" class="nav-link">Home</a>
+                <a href="index.html#about" class="nav-link">About</a>
+                <a href="index.html#courses" class="nav-link active">Courses</a>
+                <a href="index.html#contact" class="nav-link">Contact</a>
+            </div>
+            <div class="flex items-center space-x-4">
+                <button id="theme-toggle" class="text-gray-300 hover:text-white">
+                    <i class="fas fa-sun text-xl" id="theme-toggle-sun"></i>
+                    <i class="fas fa-moon text-xl hidden" id="theme-toggle-moon"></i>
+                </button>
+                <button id="mobile-menu-button" class="md:hidden">
+                    <i class="fas fa-bars text-2xl text-indigo-500"></i>
+                </button>
+            </div>
+        </nav>
+        <div id="mobile-menu" class="hidden md:hidden bg-gray-800 dark:bg-gray-900 px-6 pt-2 pb-4">
+            <a href="index.html#home" class="block py-2">Home</a>
+            <a href="index.html#about" class="block py-2">About</a>
+            <a href="index.html#courses" class="block py-2">Courses</a>
+            <a href="index.html#contact" class="block py-2">Contact</a>
+        </div>
+    </header>
+
+    <!-- Main Body with Sidebar -->
+    <div class="container mx-auto px-6 py-12 flex flex-col md:flex-row gap-8">
+        
+        <!-- Sidebar -->
+        <aside class="w-full md:w-1/4 lg:w-1/5">
+            <div class="bg-gray-800 dark:bg-gray-700 rounded-lg p-4 sticky top-24">
+                <h2 class="text-xl font-bold text-white mb-4">SE Topics</h2>
+                <nav id="sidebar-nav" class="flex flex-row md:flex-col overflow-x-auto no-scrollbar pb-4 md:pb-0">
+                    <a href="#" class="sidebar-link active flex-shrink-0 md:flex-shrink w-full text-left p-3 rounded-md" data-target="intro-se">Introduction</a>
+                    <a href="#" class="sidebar-link flex-shrink-0 md:flex-shrink w-full text-left p-3 rounded-md" data-target="sdlc-se">SDLC</a>
+                    <a href="#" class="sidebar-link flex-shrink-0 md:flex-shrink w-full text-left p-3 rounded-md" data-target="models-se">SDLC Models</a>
+                    <a href="#" class="sidebar-link flex-shrink-0 md:flex-shrink w-full text-left p-3 rounded-md" data-target="req-se">Requirements Engineering</a>
+                    <a href="#" class="sidebar-link flex-shrink-0 md:flex-shrink w-full text-left p-3 rounded-md" data-target="design-se">Software Design</a>
+                    <a href="#" class="sidebar-link flex-shrink-0 md:flex-shrink w-full text-left p-3 rounded-md" data-target="testing-se">Software Testing</a>
+                </nav>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main id="main-content" class="w-full md:w-3/4 lg:w-4/5">
+            <a href="2n.html" class="text-indigo-400 hover:text-indigo-300 mb-6 inline-block"><i class="fas fa-arrow-left mr-2"></i> Back to 2nd Year</a>
+            <div class="bg-gray-800 dark:bg-gray-700 rounded-lg shadow-lg p-6 md:p-12">
+                
+                <div id="intro-se" class="content-section space-y-6">
+                    <h2 class="text-3xl sm:text-4xl font-extrabold text-white">Introduction to Software Engineering</h2>
+                    <p class="text-gray-400 text-lg">Software Engineering is the systematic application of engineering principles to the development of software. It aims to create reliable, efficient, and maintainable software systems by using well-defined processes and methodologies.</p>
+                     <h3 class="text-2xl font-bold text-indigo-400 pt-4 mt-6">Video Explanation</h3>
+                    <div class="aspect-video bg-black rounded-lg overflow-hidden relative group cursor-pointer">
+                        <img src="https://placehold.co/1280x720/111827/a5b4fc?text=Watch+Tutorial" alt="Video Placeholder" class="w-full h-full object-cover opacity-70 group-hover:opacity-50 transition-opacity">
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <i class="fas fa-play-circle text-6xl text-white opacity-80 group-hover:opacity-100 group-hover:scale-110 transition-transform"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="sdlc-se" class="content-section hidden space-y-6">
+                    <h2 class="text-3xl sm:text-4xl font-extrabold text-white">Software Development Life Cycle (SDLC)</h2>
+                    <p class="text-gray-400">The SDLC is a framework that defines the tasks performed at each step in the software development process. It provides a structured sequence of activities to ensure the quality and correctness of the software product.</p>
+                     <h3 class="text-2xl font-bold text-indigo-400 pt-4 mt-6">Video Explanation</h3>
+                    <div class="aspect-video bg-black rounded-lg overflow-hidden relative group cursor-pointer">
+                        <img src="https://placehold.co/1280x720/111827/a5b4fc?text=Watch+Tutorial" alt="Video Placeholder" class="w-full h-full object-cover opacity-70 group-hover:opacity-50 transition-opacity">
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <i class="fas fa-play-circle text-6xl text-white opacity-80 group-hover:opacity-100 group-hover:scale-110 transition-transform"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="models-se" class="content-section hidden space-y-6">
+                    <h2 class="text-3xl sm:text-4xl font-extrabold text-white">SDLC Models</h2>
+                    <p class="text-gray-400">Different models are used to structure the SDLC. Each model has its own approach to managing the development process.</p>
+                    <ul class="list-disc list-inside text-gray-400 space-y-2">
+                        <li><strong>Waterfall Model:</strong> A linear, sequential approach where each phase must be completed before the next begins.</li>
+                        <li><strong>Agile Model:</strong> An iterative and incremental approach that focuses on flexibility, customer collaboration, and rapid delivery.</li>
+                        <li><strong>Spiral Model:</strong> Combines elements of both design and prototyping-in-stages, with an emphasis on risk analysis.</li>
+                    </ul>
+                     <h3 class="text-2xl font-bold text-indigo-400 pt-4 mt-6">Video Explanation</h3>
+                    <div class="aspect-video bg-black rounded-lg overflow-hidden relative group cursor-pointer">
+                        <img src="https://placehold.co/1280x720/111827/a5b4fc?text=Watch+Tutorial" alt="Video Placeholder" class="w-full h-full object-cover opacity-70 group-hover:opacity-50 transition-opacity">
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <i class="fas fa-play-circle text-6xl text-white opacity-80 group-hover:opacity-100 group-hover:scale-110 transition-transform"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="req-se" class="content-section hidden space-y-6">
+                    <h2 class="text-3xl sm:text-4xl font-extrabold text-white">Requirements Engineering</h2>
+                    <p class="text-gray-400">This is the process of defining, documenting, and maintaining the requirements for a software system. It is a critical step that involves understanding what the user needs and what the system must do.</p>
+                     <h3 class="text-2xl font-bold text-indigo-400 pt-4 mt-6">Video Explanation</h3>
+                    <div class="aspect-video bg-black rounded-lg overflow-hidden relative group cursor-pointer">
+                        <img src="https://placehold.co/1280x720/111827/a5b4fc?text=Watch+Tutorial" alt="Video Placeholder" class="w-full h-full object-cover opacity-70 group-hover:opacity-50 transition-opacity">
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <i class="fas fa-play-circle text-6xl text-white opacity-80 group-hover:opacity-100 group-hover:scale-110 transition-transform"></i>
+                        </div>
+                    </div>
+                </div>
+                
+                <div id="design-se" class="content-section hidden space-y-6">
+                    <h2 class="text-3xl sm:text-4xl font-extrabold text-white">Software Design</h2>
+                    <p class="text-gray-400">Software design is the process of envisioning and defining software solutions to one or more sets of problems. It involves creating a plan for the software's architecture, components, interfaces, and data.</p>
+                     <h3 class="text-2xl font-bold text-indigo-400 pt-4 mt-6">Video Explanation</h3>
+                    <div class="aspect-video bg-black rounded-lg overflow-hidden relative group cursor-pointer">
+                        <img src="https://placehold.co/1280x720/111827/a5b4fc?text=Watch+Tutorial" alt="Video Placeholder" class="w-full h-full object-cover opacity-70 group-hover:opacity-50 transition-opacity">
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <i class="fas fa-play-circle text-6xl text-white opacity-80 group-hover:opacity-100 group-hover:scale-110 transition-transform"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="testing-se" class="content-section hidden space-y-6">
+                    <h2 class="text-3xl sm:text-4xl font-extrabold text-white">Software Testing</h2>
+                    <p class="text-gray-400">Software testing is the process of evaluating and verifying that a software product or application does what it is supposed to do. The benefits of testing include preventing bugs, reducing development costs, and improving performance.</p>
+                     <h3 class="text-2xl font-bold text-indigo-400 pt-4 mt-6">Video Explanation</h3>
+                    <div class="aspect-video bg-black rounded-lg overflow-hidden relative group cursor-pointer">
+                        <img src="https://placehold.co/1280x720/111827/a5b4fc?text=Watch+Tutorial" alt="Video Placeholder" class="w-full h-full object-cover opacity-70 group-hover:opacity-50 transition-opacity">
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <i class="fas fa-play-circle text-6xl text-white opacity-80 group-hover:opacity-100 group-hover:scale-110 transition-transform"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Footer Section -->
+    <footer class="bg-gray-800 border-t border-gray-700 py-12 mt-20">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-2xl font-bold mb-4 text-indigo-500">Zeduca</h3>
+                    <p class="text-gray-400">Your journey to knowledge starts here.</p>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4 text-white">Quick Links</h4>
+                    <ul>
+                        <li class="mb-2"><a href="index.html#about" class="text-gray-400 hover:text-white">About Us</a></li>
+                        <li class="mb-2"><a href="index.html#courses" class="text-gray-400 hover:text-white">Courses</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4 text-white">Contact Us</h4>
+                    <ul>
+                        <li class="mb-2 flex items-center"><i class="fas fa-map-marker-alt mr-2 text-indigo-500"></i> Learning City</li>
+                        <li class="mb-2 flex items-center"><i class="fas fa-envelope mr-2 text-indigo-500"></i> contact@zeduca.com</li>
+                    </ul>
+                </div>
+                <div>
+                     <h4 class="text-lg font-semibold mb-4 text-white">Follow Us</h4>
+                     <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-facebook-f text-xl"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-twitter text-xl"></i></a>
+                     </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-8 pt-6 text-center text-gray-500">
+                <p>&copy; 2024 Zeduca. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="Software-Engineering-Tutorial.js"></script>
+   
+
+</body>
+</html>

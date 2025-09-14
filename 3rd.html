@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3rd Year Courses - Zeduca</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body class="bg-gray-900 text-gray-100 dark">
+
+    <!-- Header Section -->
+    <header class="bg-gray-800/80 dark:bg-gray-900/80 backdrop-blur-sm shadow-lg sticky top-0 z-50">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="index.html" class="text-3xl font-bold text-indigo-500">Zeduca</a>
+            <div class="hidden md:flex items-center space-x-8">
+                <a href="index.html#home" class="nav-link">Home</a>
+                <a href="index.html#about" class="nav-link">About</a>
+                <a href="index.html#courses" class="nav-link active">Courses</a>
+                <a href="index.html#contact" class="nav-link">Contact</a>
+            </div>
+            <div class="flex items-center space-x-4">
+                <button id="theme-toggle" class="text-gray-300 hover:text-white">
+                    <i class="fas fa-sun text-xl" id="theme-toggle-sun"></i>
+                    <i class="fas fa-moon text-xl hidden" id="theme-toggle-moon"></i>
+                </button>
+                <button id="mobile-menu-button" class="md:hidden">
+                    <i class="fas fa-bars text-2xl text-indigo-500"></i>
+                </button>
+            </div>
+        </nav>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-gray-800 dark:bg-gray-900 px-6 pt-2 pb-4">
+            <a href="index.html#home" class="block py-2">Home</a>
+            <a href="index.html#about" class="block py-2">About</a>
+            <a href="index.html#courses" class="block py-2">Courses</a>
+            <a href="index.html#contact" class="block py-2">Contact</a>
+        </div>
+    </header>
+
+    <!-- Body Section -->
+    <main class="py-16 md:py-24">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <a href="index.html#courses" class="text-indigo-400 hover:text-indigo-300 mb-4 inline-block"><i class="fas fa-arrow-left mr-2"></i> Back to All Courses</a>
+                <h1 class="text-4xl md:text-5xl font-extrabold text-white">3rd Year Curriculum</h1>
+                <p class="text-lg text-gray-400 mt-2">Focusing on advanced subjects and specialization in Semesters V and VI.</p>
+            </div>
+
+            <!-- Semester V -->
+            <section id="semester-5" class="mb-20">
+                <h2 class="text-3xl font-bold text-center mb-8 text-indigo-500">Semester V</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Theory of Computation Card -->
+                    <div class="course-card bg-gray-800 dark:bg-gray-700 rounded-lg shadow-lg overflow-hidden">
+                        <img src="image/toc.jpg" alt="Theory of Computation" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h4 class="text-xl font-bold mb-2 text-white">Theory of Computation</h4>
+                            <p class="text-gray-400 mb-4">Explore automata, formal languages, and computability.</p>
+                            <a href="Theory-Computation-Tutorial.html" class="text-indigo-500 font-semibold hover:underline">View Details <i class="fas fa-arrow-right ml-1"></i></a>
+                        </div>
+                    </div>
+                    <!-- Artificial Intelligence Card -->
+                    <div class="course-card bg-gray-800 dark:bg-gray-700 rounded-lg shadow-lg overflow-hidden">
+                        <img src="image/ai.jpg" alt="Artificial Intelligence" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h4 class="text-xl font-bold mb-2 text-white">Artificial Intelligence</h4>
+                            <p class="text-gray-400 mb-4">Introduction to AI, search algorithms, and knowledge representation.</p>
+                            <a href="#" class="text-indigo-500 font-semibold hover:underline">View Details <i class="fas fa-arrow-right ml-1"></i></a>
+                        </div>
+                    </div>
+                    <!-- Web Technologies Card -->
+                    <div class="course-card bg-gray-800 dark:bg-gray-700 rounded-lg shadow-lg overflow-hidden">
+                        <img src="image/wt.jpg" alt="Web Technologies" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h4 class="text-xl font-bold mb-2 text-white">Web Technologies</h4>
+                            <p class="text-gray-400 mb-4">Learn front-end and back-end web development.</p>
+                            <a href="Web-Technology-Tutorial.html" class="text-indigo-500 font-semibold hover:underline">View Details <i class="fas fa-arrow-right ml-1"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Semester VI -->
+            <section id="semester-6">
+                <h2 class="text-3xl font-bold text-center mb-8 text-indigo-500">Semester VI</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Compiler Design Card -->
+                    <div class="course-card bg-gray-800 dark:bg-gray-700 rounded-lg shadow-lg overflow-hidden">
+                        <img src="image/cd.jpg" alt="Compiler Design" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h4 class="text-xl font-bold mb-2 text-white">Compiler Design</h4>
+                            <p class="text-gray-400 mb-4">Understand the process of translating source code to machine code.</p>
+                            <a href="Compiler-Design-Tutorial.html" class="text-indigo-500 font-semibold hover:underline">View Details <i class="fas fa-arrow-right ml-1"></i></a>
+                        </div>
+                    </div>
+                    <!-- Machine Learning Card -->
+                    <div class="course-card bg-gray-800 dark:bg-gray-700 rounded-lg shadow-lg overflow-hidden">
+                        <img src="https://placehold.co/600x400/1f2937/c4b5fd?text=ML" alt="Machine Learning" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h4 class="text-xl font-bold mb-2 text-white">Machine Learning</h4>
+                            <p class="text-gray-400 mb-4">Explore algorithms that learn from data to make predictions.</p>
+                            <a href="#" class="text-indigo-500 font-semibold hover:underline">View Details <i class="fas fa-arrow-right ml-1"></i></a>
+                        </div>
+                    </div>
+                    <!-- Cryptography Card -->
+                     <div class="course-card bg-gray-800 dark:bg-gray-700 rounded-lg shadow-lg overflow-hidden">
+                        <img src="https://placehold.co/600x400/1f2937/c4b5fd?text=Security" alt="Cryptography" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h4 class="text-xl font-bold mb-2 text-white">Cryptography & Security</h4>
+                            <p class="text-gray-400 mb-4">Learn the principles of securing data and communication.</p>
+                            <a href="computer-network-details.html" class="text-indigo-500 font-semibold hover:underline">View Details <i class="fas fa-arrow-right ml-1"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer Section -->
+    <footer class="bg-gray-800 border-t border-gray-700 py-12 mt-20">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-2xl font-bold mb-4 text-indigo-500">Zeduca</h3>
+                    <p class="text-gray-400">Your journey to knowledge starts here.</p>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4 text-white">Quick Links</h4>
+                    <ul>
+                        <li class="mb-2"><a href="index.html#about" class="text-gray-400 hover:text-white">About Us</a></li>
+                        <li class="mb-2"><a href="index.html#courses" class="text-gray-400 hover:text-white">Courses</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4 text-white">Contact Us</h4>
+                    <ul>
+                        <li class="mb-2 flex items-center"><i class="fas fa-map-marker-alt mr-2 text-indigo-500"></i> Learning City</li>
+                        <li class="mb-2 flex items-center"><i class="fas fa-envelope mr-2 text-indigo-500"></i> contact@zeduca.com</li>
+                    </ul>
+                </div>
+                <div>
+                     <h4 class="text-lg font-semibold mb-4 text-white">Follow Us</h4>
+                     <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-facebook-f text-xl"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-twitter text-xl"></i></a>
+                     </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-8 pt-6 text-center text-gray-500">
+                <p>&copy; 2024 Zeduca. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
+

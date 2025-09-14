@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>4th Year Courses - Zeduca</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body class="bg-gray-900 text-gray-100 dark">
+
+    <!-- Header Section -->
+    <header class="bg-gray-800/80 dark:bg-gray-900/80 backdrop-blur-sm shadow-lg sticky top-0 z-50">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="index.html" class="text-3xl font-bold text-indigo-500">Zeduca</a>
+            <div class="hidden md:flex items-center space-x-8">
+                <a href="index.html#home" class="nav-link">Home</a>
+                <a href="index.html#about" class="nav-link">About</a>
+                <a href="index.html#courses" class="nav-link active">Courses</a>
+                <a href="index.html#contact" class="nav-link">Contact</a>
+            </div>
+            <div class="flex items-center space-x-4">
+                <button id="theme-toggle" class="text-gray-300 hover:text-white">
+                    <i class="fas fa-sun text-xl" id="theme-toggle-sun"></i>
+                    <i class="fas fa-moon text-xl hidden" id="theme-toggle-moon"></i>
+                </button>
+                <button id="mobile-menu-button" class="md:hidden">
+                    <i class="fas fa-bars text-2xl text-indigo-500"></i>
+                </button>
+            </div>
+        </nav>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-gray-800 dark:bg-gray-900 px-6 pt-2 pb-4">
+            <a href="index.html#home" class="block py-2">Home</a>
+            <a href="index.html#about" class="block py-2">About</a>
+            <a href="index.html#courses" class="block py-2">Courses</a>
+            <a href="index.html#contact" class="block py-2">Contact</a>
+        </div>
+    </header>
+
+    <!-- Body Section -->
+    <main class="py-16 md:py-24">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <a href="index.html#courses" class="text-indigo-400 hover:text-indigo-300 mb-4 inline-block"><i class="fas fa-arrow-left mr-2"></i> Back to All Courses</a>
+                <h1 class="text-4xl md:text-5xl font-extrabold text-white">4th Year Curriculum</h1>
+                <p class="text-lg text-gray-400 mt-2">Final projects, graduation readiness, and career preparation in Semesters VII and VIII.</p>
+            </div>
+
+            <!-- Parent Container for Both Semesters -->
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16">
+
+                <!-- Semester VII -->
+                <section id="semester-7">
+                    <h2 class="text-3xl font-bold text-center mb-8 text-indigo-500">Semester VII</h2>
+                    <div class="space-y-8">
+                        <!-- Cloud Computing Card -->
+                        <div class="course-card bg-gray-800 dark:bg-gray-700 rounded-lg shadow-lg overflow-hidden">
+                            <img src="https://placehold.co/600x400/1f2937/c4b5fd?text=Cloud" alt="Cloud Computing" class="w-full h-48 object-cover">
+                            <div class="p-6">
+                                <h4 class="text-xl font-bold mb-2 text-white">Cloud Computing</h4>
+                                <p class="text-gray-400 mb-4">Learn about cloud models (IaaS, PaaS, SaaS) and platforms like AWS.</p>
+                                <a href="#" class="text-indigo-500 font-semibold hover:underline">View Details <i class="fas fa-arrow-right ml-1"></i></a>
+                            </div>
+                        </div>
+                        <!-- Big Data Analytics Card -->
+                        <div class="course-card bg-gray-800 dark:bg-gray-700 rounded-lg shadow-lg overflow-hidden">
+                            <img src="https://placehold.co/600x400/1f2937/c4b5fd?text=Big+Data" alt="Big Data Analytics" class="w-full h-48 object-cover">
+                            <div class="p-6">
+                                <h4 class="text-xl font-bold mb-2 text-white">Big Data Analytics</h4>
+                                <p class="text-gray-400 mb-4">Explore frameworks like Hadoop and Spark for processing large datasets.</p>
+                                <a href="#" class="text-indigo-500 font-semibold hover:underline">View Details <i class="fas fa-arrow-right ml-1"></i></a>
+                            </div>
+                        </div>
+                        <!-- Final Year Project - Phase 1 Card -->
+                        <div class="course-card bg-gray-800 dark:bg-gray-700 rounded-lg shadow-lg overflow-hidden">
+                            <img src="https://placehold.co/600x400/1f2937/c4b5fd?text=Project+I" alt="Final Year Project" class="w-full h-48 object-cover">
+                            <div class="p-6">
+                                <h4 class="text-xl font-bold mb-2 text-white">Final Year Project - Phase 1</h4>
+                                <p class="text-gray-400 mb-4">Begin your capstone project: proposal, literature survey, and design.</p>
+                                <a href="#" class="text-indigo-500 font-semibold hover:underline">View Details <i class="fas fa-arrow-right ml-1"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Semester VIII -->
+                <section id="semester-8">
+                    <h2 class="text-3xl font-bold text-center mb-8 text-indigo-500">Semester VIII</h2>
+                    <div class="space-y-8">
+                        <!-- Cyber Security Card -->
+                        <div class="course-card bg-gray-800 dark:bg-gray-700 rounded-lg shadow-lg overflow-hidden">
+                            <img src="https://placehold.co/600x400/1f2937/c4b5fd?text=CyberSec" alt="Cyber Security" class="w-full h-48 object-cover">
+                            <div class="p-6">
+                                <h4 class="text-xl font-bold mb-2 text-white">Cyber Security</h4>
+                                <p class="text-gray-400 mb-4">Learn about network security, ethical hacking, and threat analysis.</p>
+                                <a href="#" class="text-indigo-500 font-semibold hover:underline">View Details <i class="fas fa-arrow-right ml-1"></i></a>
+                            </div>
+                        </div>
+                        <!-- Blockchain Technology Card -->
+                        <div class="course-card bg-gray-800 dark:bg-gray-700 rounded-lg shadow-lg overflow-hidden">
+                            <img src="https://placehold.co/600x400/1f2937/c4b5fd?text=Blockchain" alt="Blockchain Technology" class="w-full h-48 object-cover">
+                            <div class="p-6">
+                                <h4 class="text-xl font-bold mb-2 text-white">Blockchain Technology</h4>
+                                <p class="text-gray-400 mb-4">Understand distributed ledger technology, consensus, and smart contracts.</p>
+                                <a href="#" class="text-indigo-500 font-semibold hover:underline">View Details <i class="fas fa-arrow-right ml-1"></i></a>
+                            </div>
+                        </div>
+                        <!-- Final Year Project - Phase 2 Card -->
+                         <div class="course-card bg-gray-800 dark:bg-gray-700 rounded-lg shadow-lg overflow-hidden">
+                            <img src="https://placehold.co/600x400/1f2937/c4b5fd?text=Project+II" alt="Final Year Project" class="w-full h-48 object-cover">
+                            <div class="p-6">
+                                <h4 class="text-xl font-bold mb-2 text-white">Final Year Project - Phase 2</h4>
+                                <p class="text-gray-400 mb-4">Implementation, testing, and final report of your capstone project.</p>
+                                <a href="#" class="text-indigo-500 font-semibold hover:underline">View Details <i class="fas fa-arrow-right ml-1"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer Section -->
+    <footer class="bg-gray-800 border-t border-gray-700 py-12 mt-20">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-2xl font-bold mb-4 text-indigo-500">Zeduca</h3>
+                    <p class="text-gray-400">Your journey to knowledge starts here.</p>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4 text-white">Quick Links</h4>
+                    <ul>
+                        <li class="mb-2"><a href="index.html#about" class="text-gray-400 hover:text-white">About Us</a></li>
+                        <li class="mb-2"><a href="index.html#courses" class="text-gray-400 hover:text-white">Courses</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4 text-white">Contact Us</h4>
+                    <ul>
+                        <li class="mb-2 flex items-center"><i class="fas fa-map-marker-alt mr-2 text-indigo-500"></i> Learning City</li>
+                        <li class="mb-2 flex items-center"><i class="fas fa-envelope mr-2 text-indigo-500"></i> contact@zeduca.com</li>
+                    </ul>
+                </div>
+                <div>
+                     <h4 class="text-lg font-semibold mb-4 text-white">Follow Us</h4>
+                     <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-facebook-f text-xl"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-twitter text-xl"></i></a>
+                     </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-8 pt-6 text-center text-gray-500">
+                <p>&copy; 2024 Zeduca. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
+

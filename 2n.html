@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2nd Year Courses - Zeduca</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body class="bg-gray-900 text-gray-100 dark">
+
+    <!-- Header Section -->
+    <header class="bg-gray-800/80 dark:bg-gray-900/80 backdrop-blur-sm shadow-lg sticky top-0 z-50">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="index.html" class="text-3xl font-bold text-indigo-500">Zeduca</a>
+            <div class="hidden md:flex items-center space-x-8">
+                <a href="index.html#home" class="nav-link">Home</a>
+                <a href="index.html#about" class="nav-link">About</a>
+                <a href="index.html#courses" class="nav-link active">Courses</a>
+                <a href="index.html#contact" class="nav-link">Contact</a>
+            </div>
+            <div class="flex items-center space-x-4">
+                <button id="theme-toggle" class="text-gray-300 hover:text-white">
+                    <i class="fas fa-sun text-xl" id="theme-toggle-sun"></i>
+                    <i class="fas fa-moon text-xl hidden" id="theme-toggle-moon"></i>
+                </button>
+                <button id="mobile-menu-button" class="md:hidden">
+                    <i class="fas fa-bars text-2xl text-indigo-500"></i>
+                </button>
+            </div>
+        </nav>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-gray-800 dark:bg-gray-900 px-6 pt-2 pb-4">
+            <a href="index.html#home" class="block py-2">Home</a>
+            <a href="index.html#about" class="block py-2">About</a>
+            <a href="index.html#courses" class="block py-2">Courses</a>
+            <a href="index.html#contact" class="block py-2">Contact</a>
+        </div>
+    </header>
+
+    <!-- Body Section -->
+    <main class="py-16 md:py-24">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <a href="index.html#courses" class="text-indigo-400 hover:text-indigo-300 mb-4 inline-block"><i class="fas fa-arrow-left mr-2"></i> Back to 2nd Year Courses</a>
+                <h1 class="text-4xl md:text-5xl font-extrabold text-white">2nd Year Curriculum</h1>
+                <p class="text-lg text-gray-400 mt-2">Exploring intermediate topics in Semesters III and IV.</p>
+            </div>
+
+            <!-- Semester III -->
+            <section id="semester-3" class="mb-20">
+                <h2 class="text-3xl font-bold text-center mb-8 text-indigo-500">Semester III</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Operating Systems Card -->
+                    <div class="course-card bg-gray-800 dark:bg-gray-700 rounded-lg shadow-lg overflow-hidden">
+                        <img src="image/op.jpg" alt="Operating Systems" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h4 class="text-xl font-bold mb-2 text-white">Operating Systems</h4>
+                            <p class="text-gray-400 mb-4">Learn about process management, memory, and file systems.</p>
+                            <a href="Operating-System-Tutorial.html" class="text-indigo-500 font-semibold hover:underline">View Details <i class="fas fa-arrow-right ml-1"></i></a>
+                        </div>
+                    </div>
+                    <!-- DBMS Card -->
+                    <div class="course-card bg-gray-800 dark:bg-gray-700 rounded-lg shadow-lg overflow-hidden">
+                        <img src="image/dbms.jpg" alt="DBMS" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h4 class="text-xl font-bold mb-2 text-white">Database Management</h4>
+                            <p class="text-gray-400 mb-4">Explore relational models, SQL, and database design.</p>
+                            <a href="DBMS-Tutorial.html" class="text-indigo-500 font-semibold hover:underline">View Details <i class="fas fa-arrow-right ml-1"></i></a>
+                        </div>
+                    </div>
+                    <!-- Computer Networks Card -->
+                    <div class="course-card bg-gray-800 dark:bg-gray-700 rounded-lg shadow-lg overflow-hidden">
+                        <img src="image/cn.jpg" alt="Computer Networks" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h4 class="text-xl font-bold mb-2 text-white">Computer Networks</h4>
+                            <p class="text-gray-400 mb-4">Understand network layers, protocols, and security.</p>
+                            <a href="Computer-Network-Tutorial.html" class="text-indigo-500 font-semibold hover:underline">View Details <i class="fas fa-arrow-right ml-1"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Semester IV -->
+            <section id="semester-4">
+                <h2 class="text-3xl font-bold text-center mb-8 text-indigo-500">Semester IV</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- DAA Card -->
+                    <div class="course-card bg-gray-800 dark:bg-gray-700 rounded-lg shadow-lg overflow-hidden">
+                        <img src="image/daa.jpg" alt="DAA" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h4 class="text-xl font-bold mb-2 text-white">Analysis of Algorithms</h4>
+                            <p class="text-gray-400 mb-4">Analyze algorithm complexity and design patterns.</p>
+                            <a href="DAA-Tutorial.html" class="text-indigo-500 font-semibold hover:underline">View Details <i class="fas fa-arrow-right ml-1"></i></a>
+                        </div>
+                    </div>
+                    <!-- Software Engineering Card -->
+                    <div class="course-card bg-gray-800 dark:bg-gray-700 rounded-lg shadow-lg overflow-hidden">
+                        <img src="image/se.jpg" alt="Software Engineering" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h4 class="text-xl font-bold mb-2 text-white">Software Engineering</h4>
+                            <p class="text-gray-400 mb-4">Learn about software development life cycles and models.</p>
+                            <a href="Software-Engineering-Tutorial.html" class="text-indigo-500 font-semibold hover:underline">View Details <i class="fas fa-arrow-right ml-1"></i></a>
+                        </div>
+                    </div>
+                    <!-- OOPs Card -->
+                     <div class="course-card bg-gray-800 dark:bg-gray-700 rounded-lg shadow-lg overflow-hidden">
+                        <img src="image/op.jpg" alt="OOPs" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h4 class="text-xl font-bold mb-2 text-white">Object Oriented Programming</h4>
+                            <p class="text-gray-400 mb-4">Advanced concepts in OOP and design patterns.</p>
+                            <a href="OOP-Tutorial.html" class="text-indigo-500 font-semibold hover:underline">View Details <i class="fas fa-arrow-right ml-1"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer Section -->
+    <footer class="bg-gray-800 border-t border-gray-700 py-12 mt-20">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-2xl font-bold mb-4 text-indigo-500">Zeduca</h3>
+                    <p class="text-gray-400">Your journey to knowledge starts here.</p>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4 text-white">Quick Links</h4>
+                    <ul>
+                        <li class="mb-2"><a href="index.html#about" class="text-gray-400 hover:text-white">About Us</a></li>
+                        <li class="mb-2"><a href="index.html#courses" class="text-gray-400 hover:text-white">Courses</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4 text-white">Contact Us</h4>
+                    <ul>
+                        <li class="mb-2 flex items-center"><i class="fas fa-map-marker-alt mr-2 text-indigo-500"></i> Learning City</li>
+                        <li class="mb-2 flex items-center"><i class="fas fa-envelope mr-2 text-indigo-500"></i> contact@zeduca.com</li>
+                    </ul>
+                </div>
+                <div>
+                     <h4 class="text-lg font-semibold mb-4 text-white">Follow Us</h4>
+                     <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-facebook-f text-xl"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-twitter text-xl"></i></a>
+                     </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-8 pt-6 text-center text-gray-500">
+                <p>&copy; 2024 Zeduca. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
+
